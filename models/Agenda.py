@@ -4,15 +4,16 @@ class Agenda:
     def __init__(self):
         self.contatos = []
     
-    def add_contacts(self, name, number, email):
+    def add_contact(self, name, number, email):
         contato = Contato(name, number, email)
         self.contatos.append(contato)
     
-    def list_contacts(self):
+    def list_contact(self):
+        print("\n--- SEUS CONTATOS ---")
         for contato in self.contatos:
-            print(contato)
+            print(f"\n{contato}")
     
-    def edit_contacts(self, id, name, number, email):
+    def edit_contact(self, id, name, number, email):
         if 0 <= id < len(self.contatos):
             if name:
                 self.contatos[id].name = name
@@ -22,6 +23,7 @@ class Agenda:
                 self.contatos[id].email = email
     
     def change_fav(self, id):
+        contato = self.contatos[id]
         if 0 <= id < len(self.contatos):
             contato.mark_fav()
             
@@ -32,4 +34,4 @@ class Agenda:
             
     def delete_contact(self, id):
         if 0 <= id < len(self.contatos):
-            self.contatos.pop[id]
+            self.contatos.pop(id)

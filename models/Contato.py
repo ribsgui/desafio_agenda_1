@@ -9,7 +9,7 @@ class Contato:
         if self.fav == False:
             self.fav = True
         else:
-            self.fav == False
+            self.fav = False
     
     def __str__(self) -> str:
         return f'Nome: {self.name},\n Telefone: {self.number},\n Email: {self.email},\n Favorito? {self.fav}'
